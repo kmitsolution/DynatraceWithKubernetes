@@ -78,7 +78,13 @@ metadata:
   name: myapp
 spec:
   replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-app
   template:
+    metadata:
+      labels:
+        app: nginx-app
     spec:
       priorityClassName: high-priority
       containers:
